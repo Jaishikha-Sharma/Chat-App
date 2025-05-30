@@ -14,10 +14,8 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
-const allowedOrigin =
-  process.env.NODE_ENV === "production"
-    ? "https://your-actual-frontend-url.vercel.app" // Replace with your frontend URL
-    : "http://localhost:5173";
+// Temporary allow all origins for CORS (for development & initial deploy)
+const allowedOrigin = '*';
 
 app.use(express.json());
 app.use(cookieParser());
